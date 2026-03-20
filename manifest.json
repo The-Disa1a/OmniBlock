@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "Simple YouTube Ad Blocker",
+    "name": "OmniBlock",
     "version": "1.0.0",
-    "description": "Automatically skips YouTube ads as soon as the skip button appears.",
+    "description": "A powerful, lightweight extension that eradicates annoying ads, intercepts surveys, and lets you customize your web experience.",
     "permissions": ["storage"],
     "action": {
         "default_popup": "popup.html",
