@@ -51,6 +51,7 @@ style.textContent = `
     ytd-banner-promo-renderer-background,
     ytd-player-legacy-desktop-watch-ads-renderer,
     ytd-companion-slot-renderer,
+    ytd-popup-container:has(ytd-enforcement-message-view-model),
     #player-ads {
         display: none !important;
     }
@@ -69,7 +70,8 @@ setInterval(() => {
         ".ytp-skip-ad-button",
         ".ytp-ad-overlay-close-button",
         ".ytp-ad-skip-button-slot button", // Specifically catches survey skip buttons
-        ".ytp-ad-survey-answer-button" // Auto-clicks an answer to instantly jump past surveys
+        ".ytp-ad-survey-answer-button", // Auto-clicks an answer to instantly jump past surveys
+        "ytd-enforcement-message-view-model .yt-spec-button-shape-next[aria-label='Close']" // Dismisses enforcement dialogs
     ];
 
     // Click all skip and close buttons found
@@ -97,6 +99,7 @@ setInterval(() => {
         "ytd-banner-promo-renderer-background",
         "ytd-player-legacy-desktop-watch-ads-renderer",
         "ytd-companion-slot-renderer",
+        "ytd-popup-container:has(ytd-enforcement-message-view-model)",
         "#player-ads"
     ];
 

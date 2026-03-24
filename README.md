@@ -6,6 +6,7 @@ A fast, lightweight, and customizable ad-blocking extension designed to give you
 ### Seamless Ad Interception
 * **Zero-Wait Auto-Skipping:** Detects and instantly clicks "Skip Ad" buttons across the YouTube player without you having to lift a finger.
 * **Instant Survey Bypassing:** Automatically intercepts and answers intrusive YouTube player surveys so your content resumes without delay. 
+* **Enforcement Popup Defusal:** Specifically targets and neutralizes YouTube's "Ad blockers are not allowed" enforcement dialogs, preventing them from interrupting your viewing experience.
 * **Unskippable Ad Fast-Forwarding:** When confronted with unskippable video ads, OmniBlock accelerates the video speed to 16x and jumps right to the end.
 
 ### Clutter Eradication
