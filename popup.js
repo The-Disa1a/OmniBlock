@@ -1,14 +1,28 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const toggle = document.getElementById('toggle-shorts');
+    const toggleShorts = document.getElementById('toggle-shorts');
+    const toggleTelemetry = document.getElementById('toggle-telemetry');
+    const statVideo = document.getElementById('stat-video');
+    const statHome = document.getElementById('stat-home');
+    const statSidebar = document.getElementById('stat-sidebar');
 
     // Load saved settings
-    chrome.storage.local.get(['hideShorts'], (result) => {
-        // Default to true (hiding shorts) if undefined
-        toggle.checked = result.hideShorts !== false;
+    chrome.storage.local.get(['hideShorts', 'blockTelemetry', 'videoAdsBlocked', 'homeAdsBlocked', 'sideBarAdsBlocked'], (result) => {
+        // Default to true (hiding shorts / blocking telemetry) if undefined
+        toggleShorts.checked = result.hideShorts !== false;
+        toggleTelemetry.checked = result.blockTelemetry !== false;
+        
+        // Populate stats metrics
+        statVideo.textContent = result.videoAdsBlocked || 0;
+        statHome.textContent = result.homeAdsBlocked || 0;
+        statSidebar.textContent = result.sideBarAdsBlocked || 0;
     });
 
-    // Save setting when toggled
-    toggle.addEventListener('change', () => {
-        chrome.storage.local.set({ hideShorts: toggle.checked });
+    // Save settings when toggled
+    toggleShorts.addEventListener('change', () => {
+        chrome.storage.local.set({ hideShorts: toggleShorts.checked });
+    });
+    
+    toggleTelemetry.addEventListener('change', () => {
+        chrome.storage.local.set({ blockTelemetry: toggleTelemetry.checked });
     });
 });

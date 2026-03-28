@@ -5,19 +5,23 @@ A fast, lightweight, and customizable ad-blocking extension designed to give you
 
 ### Seamless Ad Interception
 * **Zero-Wait Auto-Skipping:** Detects and instantly clicks "Skip Ad" buttons across the YouTube player without you having to lift a finger.
-* **Instant Survey Bypassing:** Automatically intercepts and answers intrusive YouTube player surveys so your content resumes without delay. 
-* **Enforcement Popup Defusal:** Specifically targets and neutralizes YouTube's "Ad blockers are not allowed" enforcement dialogs, preventing them from interrupting your viewing experience.
-* **Unskippable Ad Fast-Forwarding:** When confronted with unskippable video ads, OmniBlock accelerates the video speed to 16x and jumps right to the end.
+* **Refined Unskippable Fast-Forwarding:** When confronted with unskippable video ads, OmniBlock instantly mutes the stream and sets speed to 16x. It bypasses YouTube's 3-second buffer stall by jumping natively to `duration - 0.1s`, perfectly matching YouTube's ending triggers.
+* **Instant Survey Bypassing:** Automatically intercepts and answers intrusive YouTube player surveys (like "How is this recommendation?") so your content resumes without delay. 
+* **Enforcement Popup Defusal:** Specifically targets and neutralizes YouTube's "Ad blockers are not allowed" enforcement dialogs, immediately spoofing a click on the YouTube Play button to auto-resume the video underneath!
+
+### Deep Network & Metrics
+* **Network-Level Telemetry Blocking:** Deploys severe `declarativeNetRequest` rules blocking YouTube from tracking your watchtime if the payload contains `el=adunit`. Your privacy metrics map natively to a toggle in the settings menu via Chrome Service Workers.
+* **Live Analytics Dashboard:** The extension popup features a live numerical UI board calculating exactly how many Video, Home Feed, and Sidebar ads have been obliterated natively using non-volatile `chrome.storage.local`.
 
 ### Clutter Eradication
-* **Static Banners & Popups:** Finds and silently deletes promotional banners and embedded ad slots without leaving ugly pixel gaps on the page.
+* **Static Banners & Popups:** Finds and silently deletes promotional banners, Premium shelves (`ytd-brand-video-shelf-renderer`), and embedded ad slots.
 * **Responsive Feed Cleansing:** Strips out sponsored video posts from your YouTube feeds, collapsing the empty space to keep your layout naturally flowing.
 * **Companion Ad Deletion:** Removes sidebar ads that hijack your recommendations column, restoring your suggested videos back where they belong.
 * **Inline Previews De-Ghosted:** Using advanced CSS `:has()` selector injection, ads are obliterated so fast they can never be hovered over by accident, fixing annoying "ghost playback" bugs.
 
 ### Smart Customization
 * **Context-Aware Shorts Toggling:** Features a sleek popup control panel that lets you banish distracting "Shorts" carousels. The blocker is intelligent enough to hide them purely from your Home and Watch feeds, while still letting you view them when explicitly browsing a creator's channel or searching.
-* **Native Storage State:** Remembers your preferences securely using native Chrome extension storage APIs.
+* **Context-Aware Stability:** Features native checks dynamically halting operations when Chrome Extension cache contexts invalidate (e.g. pressing reload), preventing background crash spam.
 
 ## Coming Soon (Other Sites)
 * **General Web Support:** Full ad blocking support for all other websites is coming in an upcoming release!

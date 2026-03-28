@@ -73,6 +73,27 @@
         input:checked + .slider:before {
             transform: translateX(18px);
         }
+        .stats-panel {
+            margin-top: 20px;
+            padding-top: 12px;
+            border-top: 1px solid #ddd;
+        }
+        .stats-panel h3 {
+            font-size: 14px;
+            margin-top: 0;
+            margin-bottom: 8px;
+            color: #555;
+        }
+        .stats-panel p {
+            font-size: 13px;
+            margin: 4px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        .stat-value {
+            font-weight: bold;
+            color: #ff0000;
+        }
     </style>
 </head>
 <body>
@@ -84,6 +105,21 @@
             <input type="checkbox" id="toggle-shorts" checked>
             <span class="slider"></span>
         </label>
+    </div>
+    
+    <div class="setting-row">
+        <span class="setting-label">Block Ad Telemetry</span>
+        <label class="switch">
+            <input type="checkbox" id="toggle-telemetry" checked>
+            <span class="slider"></span>
+        </label>
+    </div>
+
+    <div class="stats-panel">
+        <h3>Ad Block Stats</h3>
+        <p>Video Ads Skipped: <span id="stat-video" class="stat-value">0</span></p>
+        <p>Home Ads Removed: <span id="stat-home" class="stat-value">0</span></p>
+        <p>Sidebar Ads Removed: <span id="stat-sidebar" class="stat-value">0</span></p>
     </div>
 
     <script src="popup.js"></script>
